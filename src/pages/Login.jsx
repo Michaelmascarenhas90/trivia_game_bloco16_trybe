@@ -4,6 +4,7 @@ import { Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchToken } from '../redux/actions/tokenAction';
+import './css/login.css';
 
 class Login extends Component {
   constructor() {
@@ -81,39 +82,43 @@ class Login extends Component {
       return <Redirect to="/questions" />;
     }
     return (
-      <form>
-        <label htmlFor="name">
-          Nome:
-          <input
-            data-testid="input-player-name"
-            type="text"
-            name="name"
-            onChange={ this.handleChange }
-          />
-        </label>
-        <label htmlFor="email">
-          Email:
-          <input
-            data-testid="input-gravatar-email"
-            type="email"
-            name="email"
-            onChange={ this.handleChange }
-          />
-        </label>
-        <button
-          type="button"
-          data-testid="btn-play"
-          disabled={ invalid }
-          onClick={ () => this.saveToken() }
-        >
-          Jogar
-        </button>
-        <Link to="/settings">
-          <button type="button" data-testid="btn-settings">
-            Configurações
+      <div className="login-container">
+        <form className="login">
+          <h1 className="title1">Trivia Game</h1>
+          <label htmlFor="name">
+            Nome:
+            <input
+              data-testid="input-player-name"
+              type="text"
+              name="name"
+              onChange={ this.handleChange }
+            />
+          </label>
+          <label htmlFor="email">
+            Email:
+            <input
+              data-testid="input-gravatar-email"
+              type="email"
+              name="email"
+              onChange={ this.handleChange }
+            />
+          </label>
+          <button
+            className="btnLogin"
+            type="button"
+            data-testid="btn-play"
+            disabled={ invalid }
+            onClick={ () => this.saveToken() }
+          >
+            Jogar
           </button>
-        </Link>
-      </form>
+          <Link to="/settings">
+            <button type="button" data-testid="btn-settings">
+              Configurações
+            </button>
+          </Link>
+        </form>
+      </div>
     );
   }
 }

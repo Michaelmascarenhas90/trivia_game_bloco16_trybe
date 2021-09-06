@@ -5,6 +5,7 @@ import './style.css';
 import PropTypes from 'prop-types';
 import Feedback from '../components/Feedback';
 import Questions from '../components/Questions';
+import './css/perguntas.css';
 
 class Perguntas extends Component {
   constructor() {
@@ -206,7 +207,7 @@ class Perguntas extends Component {
   render() {
     const { avatarLink, name, score, count, buttonNext } = this.state;
     return (
-      <div>
+      <div className="question-container">
         <header>
           <img
             src={ avatarLink }

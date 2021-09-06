@@ -1,0 +1,7 @@
+.question-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 10em;
+    padding: 10px;
+  }
